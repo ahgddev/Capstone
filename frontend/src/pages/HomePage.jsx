@@ -27,7 +27,7 @@ function HomePage() {
   }, []);
   let minePosts = [...myPosts];
   let currentPosts = [...recentPosts];
-  console.log(minePosts);
+
   return (
     <div id="homepagecontainer">
       <section id="heroimg">
@@ -52,11 +52,9 @@ function HomePage() {
       <section id="myPostsContainer">
         <h1>Your Posts</h1>
         <div>
-          {minePosts.length != 0 ? 
-            minePosts.map((myPostCards) => {
+          {minePosts.length != 0 ? minePosts[0].map((myPostCards) => {
               return (
                 <RecentPostCard
-                  className="cardItem"
                   key={minePosts.indexOf(myPostCards)}
                   imgURL={myPostCards.imgURL}
                   username={myPostCards.username}
@@ -73,10 +71,9 @@ function HomePage() {
         {currentPosts.length == 0 ? (
           <p>Loading posts....</p>
         ) : (
-          currentPosts.map((recentCards) => {
+          currentPosts[0].map((recentCards) => {
             return (
               <RecentPostCard
-                className="cardItem"
                 imgURL={recentCards.imgURL}
                 username={recentCards.username}
                 title={recentCards.title}

@@ -47,7 +47,6 @@ function Dashboard() {
           {myPosts.length != 0 ? myPosts.map((myPostCards) => {
             return (
               <RecentPostCard
-                className="cardItem"
                 key={"mypost"+myPostCards.post_id}
                 imgURL={myPostCards.imgURL}
                 username={myPostCards.username}
@@ -74,7 +73,6 @@ function Dashboard() {
           {recentPosts.length != 0 ? recentPosts.map((recentCards) => {
             return (
               <RecentPostCard
-                className="cardItem"
                 key={"rcntpost"+recentCards.post_id}
                 imgURL={recentCards.imgURL}
                 username={recentCards.username}
