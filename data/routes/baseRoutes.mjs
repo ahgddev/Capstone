@@ -201,7 +201,6 @@ router.post("/", async (req, res) => {
       //Get recent posts from the DB
       recentPostData.push(allPosts);
     }
-    console.log(yourPostData)
     res.json([yourPostData, recentPostData]);
   } catch (error) {
     res.status(500).json({ message: "Server error" });

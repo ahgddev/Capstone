@@ -11,11 +11,12 @@ router.get("/:id", async (req, res) => {
       //Get the post
       let post = await Posts.findOne({post_id: req.params.id}, "-_id")
       //Get user data associated with the post
-      // let postUser = await Users.findOne({user_id: post.user_id}, "-_id avatar username")
+      let postUser = await Users.findOne({user_id: post.user_id}, "-_id avatar username")
+      
       if(post == null){
         res.json("No posts found")
       } else {
-        let postInfo = [post]
+        let postInfo = [post, postUser]
         res.json(postInfo);
       }
     } catch (error) {

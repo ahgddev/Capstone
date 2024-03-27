@@ -6,12 +6,13 @@ import axios from "axios";
 function PostDetails() {
   const { id } = useParams();
   const [postData, setPostData] = useState();
-  const [relatedPosts, setRelatedPosts] = useState();
+  const [userData, setUserData] = useState();
 
   async function dataGrabber() {
     try {
       let response = await axios.get(`http://localhost:3000/post/${id}`);
       setPostData(response.data[0]);
+      setUserData(response.data[1]);
     } catch (error) {
       console.error(error);
     }
@@ -21,18 +22,16 @@ function PostDetails() {
     dataGrabber();
   }, []);
 
-  console.log(postData);
   return (
     <div id="postContainer">
       <section id="postDisplay">
         {postData ? (
           <>
-            {" "}
             <img src={postData.img.imgURL} alt="postImage" id="postImg" />
             <div id="postDetails">
-              <img src={postData.avatar} alt="user_avatar" />
+              <img src={userData.avatar} alt="user_avatar" />
               <div id="postTextDetails">
-                <h4>{postData.username}</h4>
+                <h4>{userData.username}</h4>
                 <p>{postData.post_date}</p>
                 <p>{postData.title}</p>
                 <p>{postData.text}</p>
@@ -42,23 +41,6 @@ function PostDetails() {
         ) : (
           <p>loading</p>
         )}
-      </section>
-      <section id="relatedPosts">
-        <h1>Related Posts</h1>
-        <div id="relatedPostsSection">
-          {/* {relatedPosts?.map((myPostCards) => {
-            return (
-              <RecentPostCard
-                className="cardItem"
-                imgURL={myPostCards.imgURL}
-                username={myPostCards.username}
-                title={myPostCards.title}
-                postdate={myPostCards.post_date}
-                posttext={myPostCards.text}
-              />
-            );
-          })} */}
-        </div>
       </section>
     </div>
   );
