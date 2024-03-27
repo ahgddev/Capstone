@@ -28,6 +28,7 @@ function HomePage() {
   let minePosts = [...myPosts];
   let currentPosts = [...recentPosts];
 
+  console.log(currentPosts)
   return (
     <div id="homepagecontainer">
       <section id="heroimg">
@@ -52,7 +53,7 @@ function HomePage() {
       <section id="myPostsContainer">
         <h1>Your Posts</h1>
         <div>
-          {minePosts.length != 0 ? minePosts[0].map((myPostCards) => {
+         {minePosts[0]?.length == 0 ? <p>You haven't made any posts! </p> : minePosts.length != 0 ? minePosts[0].map((myPostCards) => {
               return (
                 <RecentPostCard
                   key={minePosts.indexOf(myPostCards)}
