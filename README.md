@@ -31,9 +31,24 @@ All image data was taken from unsplash.
 
 ## Usage Instructions
 ### Starting the app
+Start by git cloning this repo.
 
 ```
 git clone -this-repo
 ```
+
+Change to the data folder and use the following commands,
+
+```
+npm i
+nodemon server.mjs
+```
+Now open another terminal and open the front end folder. Run the following commands.
+
+```
+npm i
+npm run dev
+```
+
 To search for items in the database, you must utilize a String. The database can search for partial words (Chick will bring up Chicken dishes/products).
 Each card comes with a favorites button, which will save data from the database and store it to a state that shows all of your favorites in the Favorites page.
