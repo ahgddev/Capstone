@@ -179,7 +179,7 @@ router.post("/", async (req, res) => {
         "-password"
       );
       
-      if (loggedInUser.following) {
+      if (loggedInUser.following.length != 0) {
         //Get recent posts from people they follow
         recentPostData.push(await Posts.find({
           user_id: loggedInUser.following,
@@ -201,6 +201,7 @@ router.post("/", async (req, res) => {
       //Get recent posts from the DB
       recentPostData.push(allPosts);
     }
+    console.log(yourPostData)
     res.json([yourPostData, recentPostData]);
   } catch (error) {
     res.status(500).json({ message: "Server error" });

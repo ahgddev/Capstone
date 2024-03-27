@@ -14,8 +14,8 @@ function HomePage() {
       let response = await axios.post("http://localhost:3000/", {
         data: { id: localStorage.getItem("token") },
       });
-      setRecentPosts(response.data[0]);
-      setmyPosts(response.data[1]);
+      setRecentPosts(response.data[1]);
+      setmyPosts(response.data[0]);
       setLoading(false);
     } catch (error) {
       console.error(error.response);
