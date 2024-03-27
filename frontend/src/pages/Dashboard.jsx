@@ -38,7 +38,7 @@ function Dashboard() {
     <div id="dashboardContainer">
       <h1>Dashboard</h1>
       <section id="dashTop">
-       <img src= {usersavatar} alt="" />
+       <img src={usersavatar} alt="" id="dashAvatar"/>
           <h4>Hello <em>{usersname}</em></h4>
       </section>
       <h1>Your Posts</h1>

@@ -27,8 +27,8 @@ function Login() {
     <div id="loginContainer">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" id="loginUsername"  onChange={event => setUsername(event.target.value)}/>
-        <input type="password" id="loginPassword" onChange={event => setPassword(event.target.value)}/>
+        <input type="text" id="loginUsername"  placeholder="Username" onChange={event => setUsername(event.target.value)}/>
+        <input type="password" id="loginPassword" placeholder="Password" onChange={event => setPassword(event.target.value)}/>
         <button type="submit">Log In</button>
         {loginMessage}
       </form>

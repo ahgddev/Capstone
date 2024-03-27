@@ -24,7 +24,7 @@ function SignUp() {
   }
 
   return (
-    <div id="SignUp Container">
+    <div id="signUpContainer">
       <h1>Sign Up for Plant Parent</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" id="signUpUsername" placeholder="username" onChange={event => setUsername(event.target.value)}/>

@@ -23,9 +23,9 @@ function Nav() {
   return (
     <div className="nav">
       <div id="userDataContainer">
-        {usersavatar && usersname ?  <><h3>Hello {usersname}</h3><img src={usersavatar} alt="User Avatar" /></> : <h3>Hello Guest!</h3>}
+        {usersavatar && usersname ?  <><h3>Hello {usersname}</h3><img src={usersavatar} alt="User Avatar" id="userAvatar"/></> : <h3>Hello Guest!</h3>}
       </div>
-      <Link to="/">
+      <div id="links"><Link to="/">
         <h1>Home</h1>
       </Link>
       {!tokenData ? (
@@ -55,7 +55,8 @@ function Nav() {
           onChange={(event) => setSearchQuery(event.target.value)}
         />
         <button type="submit">Search Posts</button>
-      </form>
+      </form></div>
+      
     </div>
   );
 }
