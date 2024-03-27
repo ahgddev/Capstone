@@ -173,7 +173,7 @@ router.post("/", async (req, res) => {
     const allPosts = await Posts.find({}).sort("-date").limit(10);
     //Check if they're logged in
 
-    if (currentUserID) {
+    if (currentUserID != undefined) {
       //If Logged in
       const loggedInUser = await Users.findById(currentUserID).select(
         "-password"
@@ -197,7 +197,7 @@ router.post("/", async (req, res) => {
       } else {
         yourPostData == [0];
       }
-    } else if (!currentUserID) {
+    } else if (currentUserID == undefined) {
       //Get recent posts from the DB
       recentPostData.push(allPosts);
     }

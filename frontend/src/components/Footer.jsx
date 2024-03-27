@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div>Footer</div>
+    <div id ="footer">Plant Parent App copyright 2024</div>
   )
 }
 

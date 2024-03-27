@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(23, 54, 12, 0.87);
+  background-color: #b2b6af;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,43 +15,30 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #c0c1c4;
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #535bf2;
+  color: #ebebee;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
-  border-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: .5em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,4 +52,127 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* NavBar */
+.nav{
+  background-color: rgb(131, 131, 133);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 2%;
+  width: 100%;
+}
+
+#HomePage {
+  text-align: center;
+}
+
+#searchBar {
+  line-height: 0.2;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#searchBtn {
+  margin-top: 5px;
+  line-height: 0.10;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* HomePage */
+#homepagecontainer,
+#websiteUpsell {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+#websiteTitle {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+}
+
+#websiteTitle h1 {
+  font-size: 4em;
+  text-shadow: 
+  1px 1px 0 #dfdede,
+-1px -1px 0 #dfdede,  
+ 1px -1px 0 #dfdede,
+ -1px 1px 0 #dfdede,
+  1px 1px 0 #dfdede;
+}
+
+#recentPostsContainer h1, #myPostsContainer h1 {
+  width: 100%;
+  height: 20%;
+  background-color: #726d6d;
+}
+
+#recentPostsContainer, #myPostsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-evenly;
+}
+
+.recentPost {
+  width: 30%;
+  background-color: rgb(152, 153, 152);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1%;
+}
+
+
+/* Pages */
+
+#groceryResults,
+#menuResults,
+#groceryFavsContainer,
+#menuFavsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 1%;
+}
+#groceryFavsContainer h1,
+#menuFavsContainer h1 {
+  width: 100%;
+  text-align: center;
+}
+
+#menuResults img,
+#menuFavsContainer img {
+  width: 75%;
+  border-radius: 10px;
+}
+
+p {
+  display: inline-block;
+  width: 55%;
+}
+
+#progressButtons {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+#progressButtons button {
+  margin: auto;
+}
+
+/* Footer */
+#footer {
+  background-color: rgb(131, 131, 133);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
