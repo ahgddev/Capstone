@@ -31,6 +31,7 @@ router.post("/signup", async (req, res) => {
         username: username,
         email: email,
         password: password,
+        avatar: "https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../releases/preview/2018/png/iconmonstr-tree-2.png&r=14&g=97&b=12"
       });
       await newUser.save();
       let getNewUser = await Users.findOne({ username: req.body.username });
@@ -67,7 +68,7 @@ router.post("/login", async (req, res) => {
 // @route:   POST /logout
 // @desc:    Allow a user to logout.
 // @access:  Public
-router.post("/logout", async (req, res) => {
+router.delete("/logout", async (req, res) => {
   try {
     //Delete the token on the server
     currentUserID = "";
