@@ -13,7 +13,7 @@ function SignUp() {
       password,
       email
     };
-    return axios.post("http://localhost:3000/signup", options)
+    return axios.post("https://capstone-be-16oc.onrender.com/signup", options)
   }
 
  async function handleSubmit(event){

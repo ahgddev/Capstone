@@ -15,7 +15,7 @@ function Dashboard() {
 
   async function dataGrabber() {
     try {
-      let response = await axios.get("http://localhost:3000/dashboard");
+      let response = await axios.get("https://capstone-be-16oc.onrender.com/dashboard");
       setmyPosts(response.data[0]);
       setRecentPosts(response.data[1]);
       setupdatedTags(response.data[2]);

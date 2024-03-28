@@ -14,7 +14,7 @@ function SearchResults() {
     setLoading(true);
     try {
       let response = await axios.get(
-        `http://localhost:3000/search?q=${q}`,
+        `https://capstone-be-16oc.onrender.com/search?q=${q}`,
         
       );
       setSearchResults(response.data);

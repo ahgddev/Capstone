@@ -12,7 +12,7 @@ function HomePage() {
   async function dataGrabber() {
     setLoading(true);
     try {
-      let response = await axios.post("http://localhost:3000/", {
+      let response = await axios.post("https://capstone-be-16oc.onrender.com/", {
         data: { id: localStorage.getItem("token") },
       });
       setRecentPosts(response.data[1]);

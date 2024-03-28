@@ -10,7 +10,7 @@ function PostDetails() {
 
   async function dataGrabber() {
     try {
-      let response = await axios.get(`http://localhost:3000/post/${id}`);
+      let response = await axios.get(`https://capstone-be-16oc.onrender.com/post/${id}`);
       setPostData(response.data[0]);
       setUserData(response.data[1]);
     } catch (error) {
